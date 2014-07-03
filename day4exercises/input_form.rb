@@ -1,3 +1,5 @@
+require "./user"
+
 class InputForm
 
     attr_accessor :first_name, :last_name, :username, :email
@@ -11,13 +13,14 @@ class InputForm
         
     end
 
-    def submit(@user, @first_name, @last_name, @username, @email)
+    def submit
     	@user = create_user(@first_name, @last_name, @username, @email)
     end
 
-    def full_name(@user)
+    def full_name
+        "#{@first_name} #{@last_name}"
+    end
 
-    
     private
     
     def create_user(first_name, last_name, username, email)

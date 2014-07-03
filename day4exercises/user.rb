@@ -4,15 +4,16 @@ class User
 	attr_accessor :first_name, :last_name, :username, :email
 
 	def initialize(first_name, last_name, username, email)
+		if first_name == nil || last_name == nil || username == nil || email == nil
+			puts "ERROR"
+		end
 		@first_name = first_name
 		@last_name = last_name
 		@username = username
 		@email = email
 		@login_count = 0
 		@locked = false
-		if first_name == nil || last_name == nil || username == nil || email == nil
-			puts "ERROR"
-		end
+		
 	end
 
 	def full_name
