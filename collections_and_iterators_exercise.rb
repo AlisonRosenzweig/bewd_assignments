@@ -19,24 +19,25 @@ end
 puts "======================\n #{data[1][:user][:username]}'s tweets \n====================== \n"
 data[1][:tweets].each {|tweet|
     puts "tweet: " + tweet}
+    
 #problem 3
+
 data.reverse!
+
 #problem 4
 
 index = data.find_index{|x| x[:user][:id] == 2}
 puts "User 2 was found at index #{index}"
+
 #problem 5
+
 young_adult = []
 data.each { |user_hash|
-
     age = user_hash[:user][:age]
 
     if age >= 18 && age <= 25
-
-    young_adult.push(user_hash)
-
+        young_adult.push(user_hash)
     end
-
 }
 puts "username\tage"
 young_adult.each {|user|  puts "#{user[:user][:username]}   \t #{user[:user][:age]}"}
