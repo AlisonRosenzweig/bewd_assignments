@@ -16,12 +16,14 @@ class PayingUser < StandardUser
 
 	def login(password)
 		if check_password(password) == false
-			puts "Incorrect password!"
+			puts "invalid password"
 			return false
 		else
+			puts "Welcome #{@username}!"
 			@login_count = @login_count + 1
 			if @login_count < MAX_LOGINS
 				return true
+
 			else
 				return false 
 			end
