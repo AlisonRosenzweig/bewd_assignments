@@ -1,6 +1,18 @@
 require_relative 'input_form'
 
-	user = InputForm.new("Alison", "Rosenzweig", "ahr", "arosenz1@swarthmore.edu", "password")
+	puts "Please create a new account by providing the following information..."
+	puts "First name:"
+	first_name = gets.chomp
+	puts "Last name:"
+	last_name = gets.chomp
+	puts "Username:"
+	username = gets.chomp
+	puts "Email:"
+	email = gets.chomp
+	puts "Password:"
+	password = gets.chomp
+
+	user = InputForm.new(first_name, last_name, username, email, password)
 	paying_user_alison = user.submit
 	puts "Password:"
 	potential_password = gets.chomp.to_s
