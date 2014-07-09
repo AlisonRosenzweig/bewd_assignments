@@ -2,7 +2,7 @@ require 'digest'
 
 module BewdEncrypter
 
-	def self.encryptor(value)
+	def encryptor(value)
 		Digest::SHA256.hexdigest value
 	end
 
