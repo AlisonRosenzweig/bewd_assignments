@@ -1,8 +1,10 @@
 require 'date'
 require_relative 'standard_user'
+require_relative 'bewdencrypter'
 
 class PayingUser < StandardUser
 	MAX_LOGINS = 5
+	
 	def initialize (first_name, last_name, username, email, password)
 		super(first_name, last_name, username, email)
 		if password == nil 
@@ -34,10 +36,10 @@ class PayingUser < StandardUser
 
 	def encrypt_password(password)
 		@salt = Time.now.to_s
-		encrypted_password = "#{password}#{@salt}"
+		encrypted_password = BewdEncrypter.encryptor("#{password}#{@salt}") #not sure if the syntax here is correct..
 	end
 
 	def check_password(password)
-		@password == password + @salt
+		@password == BewdEncrypter.encryptor("#{password}#{@salt}")
 	end
 end
