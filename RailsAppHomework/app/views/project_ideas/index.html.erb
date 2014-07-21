@@ -1,0 +1,12 @@
+<h1>Listing Project Ideas</h1>
+
+<ul>
+    <% @project_ideas.each do |project_idea| %>
+    <li><%= project_idea.project_title %>: <%= project_idea.project_details %> <%= link_to 'Show', project_idea %> <%= link_to 'Edit', edit_project_idea_path(project_idea) %> <%= link_to 'Destroy', project_idea, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </li>
+</ul>
+
+<br>
+
+<%= link_to 'New Project idea', new_project_idea_path %>
