@@ -1,0 +1,10 @@
+<h1>Most Recent Tweets</h1>
+
+<hr />
+
+<table>
+	<% @tweets.each do |tweet| %>
+	<tr><td>"<%= tweet.content %>"<br />@<%= tweet.handle %>
+	<% end %></td>
+	<td><%= link_to 'Show', tweet %></td></tr>
+</table>
