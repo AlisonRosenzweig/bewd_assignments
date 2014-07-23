@@ -4,7 +4,12 @@
 
 <table>
 	<% @tweets.each do |tweet| %>
-	<tr><td>"<%= tweet.content %>"<br />@<%= tweet.handle %>
-	<% end %></td>
-	<td><%= link_to 'Show', tweet %></td></tr>
+	<tr><td>"<%= tweet.content %>"
+		<br />@<%= tweet.handle %>
+	</td>
+	<td><%= link_to 'Show', tweet %> </td></tr>
+		<!-- the line above is messing things up... I've tried tweet, -->
+	</td></tr>
+	<% end %>
+	</table>
 </table>
