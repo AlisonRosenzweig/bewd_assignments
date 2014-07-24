@@ -3,5 +3,5 @@
 <h1>Tweet by @<%= @tweet.handle %></h1>
 <hr/>
 <p>"<%= @tweet.content %>"</p>
-<p> <%= @tweet.created_at %></p>
+<p> <%= @tweet.created_at.to_formatted_s(:rfc822) %></p>
 <%= link_to 'Back', tweets_path %>

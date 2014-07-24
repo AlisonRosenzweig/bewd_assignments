@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ tweet_content = ["yay tweets!", "Sample content", "blahblahblah"]
+ tweet_handle = ["alison", "andrew", "luna"]
+
+10.times do 
+	Tweet.create(content: tweet_content.sample, handle: tweet_handle.sample)
+end
