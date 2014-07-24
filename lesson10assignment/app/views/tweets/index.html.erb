@@ -7,9 +7,9 @@
 	<tr><td>"<%= tweet.content %>"
 		<br />@<%= tweet.handle %>
 	</td>
-	<td><%= link_to 'Show', tweet %> </td></tr>
-		<!-- the line above is messing things up... I've tried tweet, -->
+	<td><%= link_to 'Show', tweet %><br /><%= link_to 'Edit', edit_tweet_path(tweet) %> </td></tr>
 	</td></tr>
 	<% end %>
-	</table>
 </table>
+<br />
+<%= link_to 'Create a new tweet', new_tweet_path %>
